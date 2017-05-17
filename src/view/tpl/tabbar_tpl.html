@@ -1,19 +1,20 @@
 <div class="tabbar">
     <ul>
-        <li>
-            <a><img src="images/home_icon.png" alt=""></a>
+        <li ng-click="tabbarClick('home')">
+            <!--跳度太大,如果是我,我会设置$scope.url,然后再引入...还是不行-->
+            <a><img ng-src="images/{{type == 'home'?'homeSel.png':'home_icon.png'}}" alt=""></a>
             <span>首页</span>
         </li>
-        <li>
-            <a><img src="images/author_icon.png" alt=""></a>
+        <li ng-click="tabbarClick('author')">
+            <a><img ng-src="images/{{type == 'author'?'authorSel.png':'author_icon.png'}}" alt=""></a>
             <span>作者</span>
         </li>
-        <li>
-            <a><img src="images/content_icon.png" alt=""></a>
+        <li ng-click="tabbarClick('content')">
+            <a><img ng-src="images/{{type == 'content'?'contentSel.png':'content_icon.png'}}" alt=""></a>
             <span>栏目</span>
         </li>
-        <li>
-            <a><img src="images/my_icon.png" alt=""></a>
+        <li ng-click="tabbarClick('my')">
+            <a><img ng-src="images/{{type == 'my'?'mySel.png':'my_icon.png'}}" alt=""></a>
             <span>我的</span>
         </li>
     </ul>
