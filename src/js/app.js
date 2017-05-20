@@ -4,7 +4,7 @@
 (function (angular) {
     "use strict"
     /*创建模块*/
-    var app = angular.module("app",[])
+    var app = angular.module("app",['ui.router'])
     /*创建控制器*/
     app.controller("appController",['$scope',function ($scope) {
         $scope.name = "趣闻一刻钟";
