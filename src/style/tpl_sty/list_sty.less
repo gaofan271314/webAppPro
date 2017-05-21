@@ -1,4 +1,8 @@
 .list{
+  z-index: 99;
+
+  border-top: 1px solid #666;
+  .pb(10);
   .tag{
     background: #666;
     color: #fff;
@@ -27,8 +31,8 @@
       .w(260);
     }
     img{
-      .w(90);
-      .h(90);
+      .w(80);
+      .h(80);
       position: absolute;
       .top(5);
       .right(10);
@@ -48,4 +52,7 @@
     }
   }
 
+}
+.list:first-child{
+  .mt(64);
 }

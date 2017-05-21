@@ -3,16 +3,14 @@
  */
 (function (angular) {
     "use strict"
-    angular.module('app').controller('homeController',['$scope','$http',function ($scope, $http) {
-        /*请求数据*/
-        $http({
-            url:'http://localhost/api/home.php',
-            method:'jsonp'
-            /*由于设置了白名单,所以不用传参了*/
-        }).then(function (res) {
-            console.log(res.data);
-        }).catch(function (err) {
+    angular.module('app').controller('homeController',['$scope','xmgHttp',function ($scope, xmgHttp) {
+        /*请求数据  xmgHttp自定义服务*/
+        xmgHttp.getData(function (data) {
+            console.log(data);
+            $scope.data = data;
+        },function (error) {
 
         })
+
     }])
 })(angular);
