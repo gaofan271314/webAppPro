@@ -22,6 +22,27 @@
                 }
             }
         })
+
         $urlRouterProvider.otherwise('/app')
+
+    }])
+
+    angular.module('app').config(['$stateProvider',function ($stateProvider) {
+        /*配置子路由*/
+        $stateProvider.state('app.index',{
+            url:'/index',
+            template:"<list list-item = 'data.posts'></list>"
+        })
+    }])
+
+    angular.module('app').config(['$stateProvider',function ($stateProvider) {
+        /*配置子路由传参*/
+        $stateProvider.state('app.detail',{
+            url:'/detail/:id',
+            template:'<div><detail my-content="{{content}}"></detail></div>',
+            /*又忘了 属性不能大写*/
+            controller:'detailController'
+
+        })
     }])
 })(angular);

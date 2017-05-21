@@ -1,4 +1,4 @@
-<div class="list" ng-repeat='item in listItem'>
+<div class="list" ng-repeat='(key,item) in listItem' ui-sref="app.detail({id:key})">
     <p class="tag" ng-bind="item.column.name"></p>
     <h3 ng-bind="item.title"></h3>
     <!--只有文字类型-->

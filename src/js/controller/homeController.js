@@ -3,7 +3,7 @@
  */
 (function (angular) {
     "use strict"
-    angular.module('app').controller('homeController',['$scope','xmgHttp',function ($scope, xmgHttp) {
+    angular.module('app').controller('homeController',['$scope','xmgHttp','$state',function ($scope, xmgHttp,$state) {
         /*请求数据  xmgHttp自定义服务*/
         xmgHttp.getData(function (data) {
             console.log(data);
@@ -11,6 +11,7 @@
         },function (error) {
 
         })
+        $state.go('app.index')
 
     }])
 })(angular);
